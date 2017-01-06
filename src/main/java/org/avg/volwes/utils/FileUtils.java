@@ -2,19 +2,19 @@ package org.avg.volwes.utils;
 
 import org.avg.volwes.model.VolwesInWord;
 
-import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Stream;
 
 public class FileUtils {
 
-    public File read(final String path) {
-        return new File("");
+    public List<String> readWords(final String path) throws IOException {
+        return new ArrayList<>();
     }
 
     public void write(Stream<VolwesInWord> volvesInWorldStream) {
 
     }
-
-
 
 }
