@@ -1,8 +1,8 @@
-package org.avg.volwes;
+package org.avg.vowels;
 
-import org.avg.volwes.model.Vowel;
-import org.avg.volwes.model.VowelsInWord;
-import org.avg.volwes.parser.Parser;
+import org.avg.vowels.model.Vowel;
+import org.avg.vowels.model.VowelsInWord;
+import org.avg.vowels.parser.Parser;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -31,7 +31,7 @@ public class ParserPlatonScenarioTest {
 
     private List<VowelsInWord> result;
     private List<String> words = Stream
-            .of("Platon", "made", "bamboo", "boats.")
+            .of("Platon", "made", "bamboo", "boats")
             .collect(Collectors.toList());
 
     @Before

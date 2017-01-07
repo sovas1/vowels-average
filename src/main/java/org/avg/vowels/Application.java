@@ -1,4 +1,4 @@
-package org.avg.volwes;
+package org.avg.vowels;
 
 public class Application {
 

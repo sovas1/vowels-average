@@ -1,6 +1,6 @@
-package org.avg.volwes.utils;
+package org.avg.vowels.utils;
 
-import org.avg.volwes.model.VowelsInWord;
+import org.avg.vowels.model.VowelsInWord;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -14,8 +14,9 @@ public class FileUtils {
 
     public List<String> readWords(final String path) throws IOException {
         return Files.lines(Paths.get(path))
-                .map(line -> line.split("[\\s]+"))
+                .map(line -> line.split("[^a-zA-Z0-9\\-']"))
                 .flatMap(Arrays::stream)
+//                .filter(w -> w.matches("^[a-zA-Z0-9\\-']{1,}$"))
                 .collect(Collectors.toList());
     }
 

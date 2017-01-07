@@ -1,4 +1,4 @@
-package org.avg.volwes.model;
+package org.avg.vowels.model;
 
 public enum Vowel {
 

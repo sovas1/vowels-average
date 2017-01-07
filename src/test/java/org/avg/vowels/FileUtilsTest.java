@@ -1,6 +1,6 @@
-package org.avg.volwes;
+package org.avg.vowels;
 
-import org.avg.volwes.utils.FileUtils;
+import org.avg.vowels.utils.FileUtils;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -16,24 +16,26 @@ public class FileUtilsTest {
     private final String TWENTY_WORDS_PATH = "src/test/java/resources/twenty_words.txt";
     private final String NON_EXISTING_PATH = "ddd";
 
+    private final String ASSERT_SIZE_MSG = "File should contain expected number of worlds";
+
     private final FileUtils fileUtils = new FileUtils();
 
     @Test
     public void readOneWord() throws IOException {
         List<String> words = fileUtils.readWords(ONE_WORD_PATH);
-        assertEquals("File should contain expected number of worlds", 1, words.size());
+        assertEquals(ASSERT_SIZE_MSG, 1, words.size());
     }
 
     @Test
     public void readTwoWords() throws IOException {
         List<String> words = fileUtils.readWords(TWO_WORDS_PATH);
-        assertEquals("File should contain expected number of worlds", 2, words.size());
+        assertEquals(ASSERT_SIZE_MSG, 2, words.size());
     }
 
     @Test
     public void readTwentyWords() throws IOException {
         List<String> words = fileUtils.readWords(TWENTY_WORDS_PATH);
-        assertEquals("File should contain expected number of worlds", 20, words.size());
+        assertEquals(ASSERT_SIZE_MSG, 20, words.size());
     }
 
     @Test(expected = NoSuchFileException.class)
