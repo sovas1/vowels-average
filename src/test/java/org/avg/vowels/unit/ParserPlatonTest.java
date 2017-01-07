@@ -25,7 +25,7 @@ import static org.junit.Assert.assertNotNull;
 // ({a, o}, 5) -> 2
 // ({a, e}, 4) -> 2
 
-public class ParserPlatonScenarioTest {
+public class ParserPlatonTest {
 
     private Parser parser = new Parser();
 

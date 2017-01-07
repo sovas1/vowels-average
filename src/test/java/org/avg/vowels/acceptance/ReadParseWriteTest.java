@@ -17,7 +17,7 @@ import static org.junit.Assert.assertEquals;
 // ({a, o}, 5) -> 2
 // ({a, e}, 4) -> 2
 
-public class ReadParseWrite {
+public class ReadParseWriteTest {
 
     private FileUtils fileUtils = new FileUtils();
     private Parser parser = new Parser();

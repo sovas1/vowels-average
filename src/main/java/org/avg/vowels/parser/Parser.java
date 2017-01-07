@@ -36,19 +36,18 @@ public class Parser {
                     vowelsInWord.setAverage((double) allVowels.size());
                     vowelsInWord.incrementTotal();
 
+                    final boolean[] contains = new boolean[1];
                     vowelsInWordList.stream()
                             .filter(v -> v.equals(vowelsInWord))
                             .forEach(v -> {
+                                contains[0] = true;
                                 v.incrementTotal();
                                 v.setAverage((v.getAverage() + vowelsInWord.getAverage()) / v.getTotal());
                             });
 
-                    if(!vowelsInWordList.contains(vowelsInWord)) {
+                    if(!contains[0]) {
                         vowelsInWordList.add(vowelsInWord);
                     }
-
-
-                    System.out.println();
 
                 });
 
