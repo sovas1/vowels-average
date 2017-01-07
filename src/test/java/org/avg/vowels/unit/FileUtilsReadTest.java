@@ -1,4 +1,4 @@
-package org.avg.vowels;
+package org.avg.vowels.unit;
 
 import org.avg.vowels.utils.FileUtils;
 import org.junit.Test;
@@ -9,7 +9,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class FileUtilsTest {
+public class FileUtilsReadTest {
 
     private final String ONE_WORD_PATH = "src/test/java/resources/one_word.txt";
     private final String TWO_WORDS_PATH = "src/test/java/resources/two_words.txt";

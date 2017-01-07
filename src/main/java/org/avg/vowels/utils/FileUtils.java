@@ -8,7 +8,6 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class FileUtils {
 
@@ -16,12 +15,12 @@ public class FileUtils {
         return Files.lines(Paths.get(path))
                 .map(line -> line.split("[^a-zA-Z0-9\\-']"))
                 .flatMap(Arrays::stream)
-//                .filter(w -> w.matches("^[a-zA-Z0-9\\-']{1,}$"))
+                .filter(w -> w.matches("^[a-zA-Z0-9\\-']{1,}$"))
                 .collect(Collectors.toList());
     }
 
-    public void write(Stream<VowelsInWord> vowelsInWorldStream) {
-
+    public void write(List<VowelsInWord> vowelsInWorld, final String path) throws IOException {
+        throw new IOException();
     }
 
 }

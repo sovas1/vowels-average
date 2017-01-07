@@ -1,4 +1,4 @@
-package org.avg.vowels;
+package org.avg.vowels.unit;
 
 import org.avg.vowels.model.Vowel;
 import org.avg.vowels.model.VowelsInWord;

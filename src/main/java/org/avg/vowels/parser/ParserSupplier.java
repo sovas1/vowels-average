@@ -10,16 +10,13 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class ParserSupplier {
+class ParserSupplier {
 
     /**
      * @param wordString
-     * @return Set of vowels contained in wordString
-     *
-     * Do binary search (Average performance	O(log n))
-     * in case of finding vowels in word.
+     * @return List of all vowels contained in wordString
      */
-    public List<Vowel> findVowels(String wordString) {
+    List<Vowel> findVowels(String wordString) {
         wordString = wordString.toLowerCase();
         List<Character> availableVowels = Stream.of(Vowel.values())
                 .map(Vowel::getValue)
