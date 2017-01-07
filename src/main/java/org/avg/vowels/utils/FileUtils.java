@@ -15,12 +15,15 @@ public class FileUtils {
         return Files.lines(Paths.get(path))
                 .map(line -> line.split("[^a-zA-Z0-9\\-']"))
                 .flatMap(Arrays::stream)
-                .filter(w -> w.matches("^[a-zA-Z0-9\\-']{1,}$"))
                 .collect(Collectors.toList());
     }
 
     public void write(List<VowelsInWord> vowelsInWorld, final String path) throws IOException {
-        throw new IOException();
+        List<String> out = vowelsInWorld.stream()
+                .map(VowelsInWord::toString)
+                .map(v -> v.replaceAll("\\[", "").replaceAll("\\]", ""))
+                .collect(Collectors.toList());
+        Files.write(Paths.get(path), out);
     }
 
 }
