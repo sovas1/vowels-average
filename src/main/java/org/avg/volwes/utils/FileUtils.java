@@ -1,6 +1,6 @@
 package org.avg.volwes.utils;
 
-import org.avg.volwes.model.VolwesInWord;
+import org.avg.volwes.model.VowelsInWord;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -19,7 +19,7 @@ public class FileUtils {
                 .collect(Collectors.toList());
     }
 
-    public void write(Stream<VolwesInWord> volvesInWorldStream) {
+    public void write(Stream<VowelsInWord> vowelsInWorldStream) {
 
     }
 

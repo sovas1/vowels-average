@@ -26,7 +26,7 @@
     <build>
         <resources>
             <resource>
-                <directory>src/main/java/org/avg/volwes</directory>
+                <directory>src/main/java/org/avg/vowels</directory>
             </resource>
             <resource>
                 <directory>src/test/java/resources</directory>

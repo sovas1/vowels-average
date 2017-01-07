@@ -3,32 +3,32 @@ package org.avg.volwes.model;
 import java.util.HashSet;
 import java.util.Set;
 
-public class VolwesInWord {
+public class VowelsInWord {
 
-    private Set<Volwe> volwes;
+    private Set<Vowel> vowels;
     private Integer wordLen;
     private Double average;
 
-    public VolwesInWord() {
-        volwes = new HashSet<>();
+    public VowelsInWord() {
+        vowels = new HashSet<>();
         wordLen = 0;
         average = 0.0;
     }
 
-    public void addVolwe(Volwe volwe) {
-        volwes.add(volwe);
+    public void addVolwe(Vowel vowel) {
+        vowels.add(vowel);
     }
 
-    public Set<Volwe> getVolwes() {
-        return volwes;
+    public Set<Vowel> getVowels() {
+        return vowels;
     }
 
     public Integer getWordLen() {
         return wordLen;
     }
 
-    public void setVolwes(Set<Volwe> volwes) {
-        this.volwes = volwes;
+    public void setVowels(Set<Vowel> vowels) {
+        this.vowels = vowels;
     }
 
     public void setWordLen(Integer wordLen) {
@@ -45,6 +45,6 @@ public class VolwesInWord {
 
     @Override //({a, o}, 6) -> 2.5
     public String toString() {
-        return "({" + volwes + "}," + wordLen + ") -> " + average;
+        return "({" + vowels + "}," + wordLen + ") -> " + average;
     }
 }

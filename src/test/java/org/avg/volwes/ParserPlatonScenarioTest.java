@@ -1,8 +1,9 @@
 package org.avg.volwes;
 
-import org.avg.volwes.model.Volwe;
-import org.avg.volwes.model.VolwesInWord;
-import org.avg.volwes.utils.Parser;
+import org.avg.volwes.model.Vowel;
+import org.avg.volwes.model.VowelsInWord;
+import org.avg.volwes.parser.Parser;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
@@ -28,24 +29,21 @@ public class ParserPlatonScenarioTest {
 
     private Parser parser = new Parser();
 
-    private List<VolwesInWord> result;
-    private List<String> words;
+    private List<VowelsInWord> result;
+    private List<String> words = Stream
+            .of("Platon", "made", "bamboo", "boats.")
+            .collect(Collectors.toList());
 
-    @Test
+    @Before
     public void parseFourWords(){
-        words = Stream
-                .of("Platon", "made", "bamboo", "boats.")
-                .collect(Collectors.toList());
-
-        result = parser.wordsToStream(words).collect(Collectors.toList());
-
+        result = parser.wordsToResultStream(words).collect(Collectors.toList());
         assertEquals(3, result.size());
     }
 
     @Test
     public void assertFirstGroup() {
-        VolwesInWord expected = new VolwesInWord();
-        expected.setVolwes(Stream.of(Volwe.A, Volwe.O).collect(Collectors.toSet()));
+        VowelsInWord expected = new VowelsInWord();
+        expected.setVowels(Stream.of(Vowel.A, Vowel.O).collect(Collectors.toSet()));
         expected.setWordLen(6);
         expected.setAverage(2.5);
 
@@ -54,8 +52,8 @@ public class ParserPlatonScenarioTest {
 
     @Test
     public void assertSecondGroup() {
-        VolwesInWord expected = new VolwesInWord();
-        expected.setVolwes(Stream.of(Volwe.A, Volwe.O).collect(Collectors.toSet()));
+        VowelsInWord expected = new VowelsInWord();
+        expected.setVowels(Stream.of(Vowel.A, Vowel.O).collect(Collectors.toSet()));
         expected.setWordLen(5);
         expected.setAverage(2.0);
 
@@ -64,8 +62,8 @@ public class ParserPlatonScenarioTest {
 
     @Test
     public void assertThirdGroup() {
-        VolwesInWord expected = new VolwesInWord();
-        expected.setVolwes(Stream.of(Volwe.A, Volwe.E).collect(Collectors.toSet()));
+        VowelsInWord expected = new VowelsInWord();
+        expected.setVowels(Stream.of(Vowel.A, Vowel.E).collect(Collectors.toSet()));
         expected.setWordLen(4);
         expected.setAverage(2.0);
 
@@ -73,7 +71,7 @@ public class ParserPlatonScenarioTest {
     }
 
 
-    private void assertGroup(VolwesInWord expected, Integer listIndex) {
+    private void assertGroup(VowelsInWord expected, Integer listIndex) {
         assertNotNull(result);
         assertEquals(expected, result.get(listIndex));
     }

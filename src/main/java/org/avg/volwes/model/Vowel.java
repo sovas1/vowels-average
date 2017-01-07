@@ -1,6 +1,6 @@
 package org.avg.volwes.model;
 
-public enum  Volwe {
+public enum Vowel {
 
     O('o'),
     A('a'),
@@ -12,7 +12,7 @@ public enum  Volwe {
 
     private Character value;
 
-    Volwe(Character value) {
+    Vowel(Character value) {
         this.value = value;
     }
 
